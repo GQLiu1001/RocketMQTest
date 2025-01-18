@@ -45,5 +45,10 @@ docker run -d --restart=always --name rmqbroker --network rocketmq --privileged=
 ```
 docker run -d --restart=always --name rmq-dashboard -p 8083:8080 --network rocketmq -e "JAVA_OPTS=-Xmx256M -Xms256M -Xmn128M -Drocketmq.namesrv.addr=rmqnamesrv:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false" apacherocketmq/rocketmq-dashboard
 ```
+## 4. 取消自动启动
+```
+docker update --restart=no rmqbroker
+docker update --restart=no rmq-dashboard
+```
 
 
